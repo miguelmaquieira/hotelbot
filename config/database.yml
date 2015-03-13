@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: AirBnBTest_development
+  database: hotelbot_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: AirBnBTest_test
+  database: hotelbot_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: AirBnBTest_production
-  username: AirBnBTest
-  password: <%= ENV['AIRBNBTEST_DATABASE_PASSWORD'] %>
+  database: hotelbot_production
+  username: HotelbotTest
+  password: <%= ENV['HOTELBOTTEST_DATABASE_PASSWORD'] %>
