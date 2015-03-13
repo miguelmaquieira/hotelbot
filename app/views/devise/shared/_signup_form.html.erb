@@ -1,0 +1,17 @@
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-vertical"}) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-group">
+    <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :password, required: true, input_html: { class: 'form-control' }, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+  </div>
+  <div class="form-group">
+    <%= f.input :password_confirmation, input_html: { class: 'form-control' }, required: true %>
+  </div>
+
+  <div class="btn-group pull-right" role="group">
+    <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-default btn-sign-process" %>
+    <%= f.button :submit, "Sign up", class: "btn btn-primary btn-sign-process btn-signup" %>
+  </div>
+<% end %>

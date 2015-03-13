@@ -1,0 +1,22 @@
+<div class="ambiance-tags-container">
+  <div class="title">
+    What are your preferred hotel styles?
+    <hr>
+  </div>
+  <%= form_tag(profile_hotel_styles_new_path, method: 'post') do %>
+    <div class="form-group" >
+      <div class="tag-container">
+        <% @ambiances.each do |ambiance| %>
+          <input type="checkbox" class="toggle-ambiance" data-on-text="<%= ambiance.text %>" name="ambiances[<%= ambiance.text %>]" data-off-text="<%= ambiance.text %>" data-off-color="default">
+        <% end %>
+      </div>
+      <hr>
+      <div class="tag-container-button">
+        <div class="btn-group form-group pull-right" role="group">
+          <%= link_to "Skip", home_welcome_path, class: "btn btn-default btn-sign-process" %>
+          <input type="submit" value="Next" class="button btn btn-primary btn-sign-process btn-signup" />
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

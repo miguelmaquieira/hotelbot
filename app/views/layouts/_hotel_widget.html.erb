@@ -1,0 +1,45 @@
+<div id="<%= hotel['id'] %>" class="col-sm-4 hotel-widget-container no-padding">
+  <%= image_tag hotel['photos'][0]['large'], class: "img-responsive resize-image" %>
+  <div class="top-text">
+    <div class="hotel-name">
+      <p><%= hotel['name'] %></p>
+    </div>
+    <div class="location-name">
+      <p><%= hotel['location']['city'] %>, <%= hotel['location']['country'] %></p>
+    </div>
+    <div class="price-container">
+      <div class="from">
+        From:
+      </div>
+      <span class="price"><%= hotel['price']['nightly'] %> <sup class="h5">€</sup></span>
+    </div>
+      <div class="match-container">
+        <% if !hotel['matching'].nil?  && hotel['matching'].to_i > 50 %>
+          <i class="fa fa-thumbs-up"></i>
+        <% else %>
+          <i class="fa fa-thumbs-down "></i>
+        <% end %>
+        <span class="match"> <%= hotel['matching'] %> <sup class="h5">%</sup></span>
+        <div class='matchers'>
+          <% tags = hotel['tags'].split(/;/) %>
+          <% tags.each do |tag| %>
+            <span class="tag"><%= tag %></span>
+          <% end %>
+        </div>
+      </div>
+  </div>
+  <div class="actions">
+    <a href="#" class="icon-actions">
+      <i class="fa fa-list fa-2x"></i>
+    </a>
+    <a href="/profile/add_to_wishlist/<%= hotel['id'] %>" class="icon-actions">
+      <i class="fa fa-heart-o fa-2x"></i>
+    </a>
+    <a href="#" class="icon-actions">
+      <i class="fa fa-facebook-official fa-2x"></i>
+    </a>
+    <a href="#" class="icon-actions">
+      <i class="fa fa-search fa-2x"></i>
+    </a>
+  </div>
+</div>

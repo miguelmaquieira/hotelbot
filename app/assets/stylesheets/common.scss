@@ -1,0 +1,99 @@
+.hotel-widget {
+  margin-bottom: 20px;
+  .hotel-widget-container {
+    position: relative;
+    padding: 0px, 15px;
+    text-align: center;
+    width: 100%;
+    color: #FFFFFF;
+    .top-text {
+      .hotel-name {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .location-name {
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .price-container, .match-container {
+        position: absolute;
+        padding: 7px 10px;
+        background-color: rgba(60, 63, 64, 0.9);
+      }
+      .price-container {
+        left: 0;
+        top: 55px;
+        .from {
+          top: 45px;
+          font-size: 10px;
+          text-align: left;
+        }
+        .price {
+          font-size: 24px;
+          font-weight: 300;
+        }
+      }
+      .match-container {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        .match {
+          font-size: 24px;
+          font-weight: 300;
+          padding-left: 5px;
+        }
+      }
+    }
+    .actions {
+      position: absolute;
+      padding: 5px 10px;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      background-color: rgba(60, 63, 64, 0.9);
+      display: none;
+      text-align:center;
+      height: 40px;
+      .icon-actions {
+        padding: 5px;
+        color: #FFFFFF;
+      }
+    }
+    .matchers {
+      position: absolute;
+      bottom: 48px;
+      right: 0px;
+      background-color: rgba(60, 63, 64, 0.9);
+      font-weight: 300;
+      font-size: 13px;
+      padding: 10px 5px;
+      display: none;
+      font-family: "Helvetica Neue";
+      .tag {
+        display: block;
+        background-color: #838383;
+        border-radius: 3px;
+        margin-top: 3px;
+        line-height: 2;
+        width: 79px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.no-padding {
+  padding: 0px !important;
+  margin: 0px !important;
+}

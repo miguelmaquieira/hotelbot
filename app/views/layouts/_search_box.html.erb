@@ -1,0 +1,105 @@
+<% action = 'search' if local_assigns[:action].nil? %>
+<% if user_signed_in? %>
+  <%= javascript_tag do %>
+    var user_signin = true;
+  <% end %>
+<% else %>
+  <%= javascript_tag do %>
+    var user_signin = false;
+  <% end %>
+<% end %>
+<div class="search-box-container row no-padding">
+<div class="row">
+  <% if action == 'search' %>
+    <div class="col-sm-6 col-sm-offset-3 search-box">
+  <% else %>
+    <div class="col-sm-10 col-sm-offset-1 search-box">
+  <% end %>
+    <div class="search-box-form row">
+      <%= form_tag hotels_path, class: "form-inline center" do %>
+      <div class="col-sm-10 no-padding">
+        <div class="search-box-primary row">
+          <div class="container">
+            <select id="ambiances_select" multiple="multiple">
+              <% @ambiances.each do |ambiance| %>
+                <option value="<%= ambiance.id %>"><%= ambiance.text %></option>
+              <% end %>
+            </select>
+            <select id="facilities_select" multiple="multiple">
+              <% @facilities.each do |facility| %>
+                <option value="<%= facility.id %>"><%= facility.text %></option>
+              <% end %>
+            </select>
+            <input type="hidden" id="location_select" class="input-xlarge" />
+          </div>
+        </div>
+        <div class="search-box-secondary row">
+          <div class="container">
+            <div class='input-group date' id='arrival_date_picker' name="search[arrival]">
+              <input type='text' class="form-control"/>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <div class='input-group date' id='depart_date_picker' name="search[arrival]">
+              <input type='text' class="form-control"/>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <select class="selectpicker show-tick">
+              <% (1..16).each do |guest| %>
+                <% if guest == 1 %>
+                  <option value="<%= guest %>"><%= guest %> Guest</option>
+                <% elsif guest == 16 %>
+                  <option value="<%= guest %>">+<%= guest %> Guests</option>
+                <% else %>
+                  <option value="<%= guest %>"><%= guest %> Guests</option>
+                <% end %>
+              <% end %>
+            </select>
+            <select id="prices_select" multiple="multiple">
+              <% @prices.each do |price| %>
+                <option value="<%= price.id %>"><%= price.name %></option>
+              <% end %>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2 no-padding">
+        <div class="search-button-container pull-right">
+          <% if action == 'save' %>
+            <%= javascript_tag do %>
+              var action_mode = 'save';
+            <% end %>
+          <% end %>
+          <div class="btn-group" role="group">
+            <button type="button" id="advanced-lnk" class="btn btn-default"><i class="fa fa-plus"></i></button>
+            <%= submit_tag 'Search', class: "btn btn-danger btn-search pull-right", id: "btn-search"%>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="search-box-tag-container row">
+      <div class="col-sm-10 no-padding">
+        <div class="tag-box" id="tag-box-div">
+          <input type="text" name="tag-box" id="tag-box"/>
+        </div>
+      </div>
+      <div class="col-sm-2 no-padding">
+        <% if user_signed_in? %>
+          <button name="btn-save" class="btn btn-info btn-save pull-right" id="btn-save">Save</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% if action == 'search' %>
+    <div class="col-sm-3">
+      <div class="tag-box-result" id="tag-box-result">
+        You'll get <span class="result-size">0</span> awesome hotels
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_include_tag "search_box.js" %>
+<% end %>

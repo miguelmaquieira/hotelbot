@@ -1,0 +1,53 @@
+<div class="hotels_result_container">
+  <div class="container-fluid">
+    <div class='row'>
+      <div class="header_container">
+        <div class="panel-search-box">
+            <%= render('layouts/search_box.html.erb') %>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="page-container row">
+        <div class="col-sm-7 col-xs-12">
+          <div class= "hotels-container">
+            <div class= "hotels-display">
+              <% @hotels.each do |hotel| %>
+                <div class="col-sm-6 col-xs-12 hotel-widget">
+                <%= render('layouts/hotel_widget.html.erb', hotel: hotel) %></div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="map_container">
+          <div class="col-sm-5 no-padding">
+            <div id="map" style="width: 100%; height: 600px;"></div>
+              <% content_for(:after_js) do %>
+                <%= javascript_tag do %>
+                  $(document).on('ready', function() {
+                    handler = Gmaps.build('Google');
+                    handler.buildMap({ internal: { id: 'map' } }, function(){
+                      markers = handler.addMarkers(<%= raw @markers.to_json %>);
+                      for (i = 0; i < markers.length; i++) {
+                        var marker = markers[i].serviceObject;
+                        google.maps.event.addListener(marker, 'click', function() {
+                          alert("let's retrive info for this hotel'");
+                        });
+                      }
+                      handler.bounds.extendWith(markers);
+                      handler.fitMapToBounds();
+                    });
+                  })
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <br>
+        </div>
+        <%= javascript_tag do %>
+          var query_params = <%= @query_params.to_json.html_safe %>;
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

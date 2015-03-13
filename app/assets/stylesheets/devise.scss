@@ -1,0 +1,119 @@
+.btn-sign-process {
+  width: 120px;
+}
+
+.btn-sign-social {
+  width: 130px;
+}
+
+.registration-container, .sign-container{
+  padding-top: 80px;
+  .sign-container {
+    min-height: 440px;
+    padding-top: 50px;
+    .panel-heading {
+      background-color: #FBA160;
+      border-color: #FA6900;
+      color: #FFFFFF;
+    }
+    .panel {
+      border-color: #FA6900;
+    }
+    .btn-signup {
+      background-color: #FA6900;
+      border-color: #FA6900;
+    }
+    .btn-signin {
+      background-color: #FA6900;
+      border-color: #FA6900;
+    }
+    .btn-sign-social {
+      background-color: #FFFFFF;
+    }
+    .btn-linkedin {
+      border-color: #007BB6;
+      color: #007BB6;
+    }
+    .btn-linkedin > :first-child {
+      border-right: 1px solid #007BB6;
+    }
+    .btn-facebook {
+      border-color: #3B5998;
+      color: #3B5998;
+    }
+    .btn-facebook > :first-child {
+      border-right: 1px solid #3B5998;
+    }
+  }
+
+  .ambiance-tags-container {
+
+    .title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 300;
+    }
+    .tag-container {
+       margin-top: 30px;
+      .bootstrap-switch {
+        margin: 5px;
+        .bootstrap-switch-handle-off {
+          background: none repeat scroll 0% 0% #F0F0F0;
+          color: #606060;
+        }
+        .bootstrap-switch-handle-on {
+          background: none repeat scroll 0% 0% #FA6900;
+          color: #FFFFFF;
+        }
+      }
+    }
+    .btn-signup {
+      background-color: #FA6900;
+      border-color: #FA6900;
+    }
+  }
+
+  .basic-info-container {
+
+    .title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 300;
+    }
+    .button-container {
+       margin-top: 30px;
+      .bootstrap-switch {
+        margin: 5px;
+        .bootstrap-switch-handle-off {
+          background: none repeat scroll 0% 0% #FA6900;
+          color: #FFFFFF;
+        }
+      }
+    }
+    .btn-signup {
+      background-color: #FA6900;
+      border-color: #FA6900;
+    }
+  }
+}
+
+.signup-or-separator {
+  background: none repeat scroll 0% 0% transparent;
+  height: 34px;
+  position: relative;
+  text-align: center;
+  .text {
+    margin: 0px;
+    padding: 8px;
+    display: inline-block;
+    background-color: #FFFFFF;
+  }
+}
+
+.sign-social {
+  text-align: center;
+}
+
+.sign-email {
+
+}

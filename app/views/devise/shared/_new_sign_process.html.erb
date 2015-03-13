@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4 sign-container">
+    <div class="panel panel-info">
+      <div class="panel-heading"><strong>Sign <%= sign_process_type %></strong></div>
+      <div class="panel-body">
+        <div class="row sign-social">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-social btn-facebook btn-sign-social" do %>
+                <i class="fa fa-facebook"></i> Facebook
+              <% end %>
+              <%= link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-social btn-linkedin btn-sign-social" do %>
+                <i class="fa fa-linkedin"></i> LinkedIn
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row sign-email">
+          <div class="col-sm-12">
+            <% if params[:controller] == "devise/sessions" %>
+              <%= render('devise/shared/signin_form.html.erb') %>
+            <% else %>
+              <%= render('devise/shared/signup_form.html.erb') %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

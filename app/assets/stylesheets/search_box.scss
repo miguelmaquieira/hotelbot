@@ -1,0 +1,99 @@
+.panel-search-box {
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 50px;
+  .search-box-container {
+    background-color: #292421;
+    opacity: 0.9;
+    z-index: 100;
+    .search-box {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      .search-box-form {
+        .search-box-primary {
+          padding-bottom: 10px;
+        }
+        .search-box-secondary {
+          padding-bottom: 10px;
+          -webkit-transition: width 2s; /* Safari 3.1 to 6.0 */
+          transition: width 2s;
+        }
+        .date {
+          width: 140px;
+        }
+        .btn-search {
+          width: 80px;
+          background-color: #FA6900;
+        }
+      }
+      .search-button-container {
+        a {
+          font-size: 11px;
+          text-align: right;
+          padding-top: 5px;
+          padding-bottom: 0px;
+          float: right;
+        }
+        a:link {
+          color: #FA6900;
+        }
+        a:visited {
+          color: #FA6900;
+        }
+        a:hover {
+          color: #FA6900;
+        }
+        .input-group .bootstrap-select.form-control {
+          z-index: inherit;
+        }
+      }
+      .search-box-tag-container {
+        .tag-box {
+          padding: 4px;
+          border: 1px solid #3C3A3A;
+          background-color: #3C3A3A;
+          border-radius: 5px;
+          .bootstrap-tagsinput {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0px;
+          }
+          .label-info {
+            background-color: #838383;
+          }
+          .label {
+            font-weight: 300;
+            font-size: 14px;
+            color: white;
+            line-height: 2;
+          }
+          .tag [data-role="remove"] {
+            font-weight: 900;
+            font-size: 12px;
+            margin-left: 3px;
+          }
+        }
+        .btn-save {
+          width: 100px;
+          background-color: #3C3A3A;
+          border: none;
+        }
+      }
+    }
+    .tag-box-result {
+      color: #FFFFFF;
+      font-size: 14px;
+      text-align: right;
+      padding-top: 10px;
+      padding-right: 15px;
+      font-weight: 400;
+      .result-size {
+        font-weight: 900;
+        color: #FA6900;
+      }
+    }
+  }
+}

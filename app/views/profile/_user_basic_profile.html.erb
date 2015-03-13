@@ -1,0 +1,22 @@
+<div class="basic-profile-container">
+  <div class="avatar-container">
+    <div class="picture">
+      <% if current_user.picture %>
+        <%= image_tag current_user.picture %>
+      <% else %>
+        <%= image_tag 'no-avatar.png' %>
+      <% end %>
+
+    </div>
+    <div class="name">
+      <% if current_user.name %>
+        <p><%= current_user.name %></p>
+      <% else %>
+        <p><%= 'Give me a name' %></p>
+      <% end %>
+    </div>
+    <% if action_name != 'show_settings' %>
+      <%= link_to "Edit profile", profile_show_settings_path %>
+    <% end %>
+  </div>
+</div>

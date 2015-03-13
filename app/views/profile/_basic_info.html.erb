@@ -1,0 +1,40 @@
+<div class="basic-info-container">
+  <div class="title">
+    We are almost done. Some basic info about yourself.
+    <hr>
+  </div>
+  <%= form_tag(profile_basic_info_path, method: 'post') do %>
+    <div class="row">
+      <div class="select-container col-sm-2 col-sm-offset-5">
+        <div class="form-group">
+          <select class="age_picker show-tick form-control" name="basic_info[age]">
+            <% @ages.each do |age| %>
+              <option value="<%= age[:id] %>"><%= age[:value] %> </option>
+            <% end %>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="gender_picker show-tick form-control" name="basic_info[gender]">
+            <% @gender.each do |gender| %>
+              <option value="<%= gender[:id] %>"><%= gender[:value] %> </option>
+            <% end %>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usually_picker">I usually travel for:</label>
+          <select class="usually_picker show-tick form-control" name="basic_info[usually]">
+            <% @usually_travel.each do |usually| %>
+            <option value="<%= usually[:id] %>"><%= usually[:value] %> </option>
+          <% end %>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="button-container row">
+      <div class="btn-group form-group pull-right" role="group">
+        <%= link_to "Skip", home_welcome_path, class: "btn btn-default btn-sign-process" %>
+        <input type="submit" value="Finish" class="button btn btn-primary btn-sign-process btn-signup" />
+      </div>
+    </div>
+  <% end %>
+</div>

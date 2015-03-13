@@ -1,0 +1,65 @@
+<nav class="navbar navbar-default navbar-fixed-top hotelsify-nav-header">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to home_welcome_path, class: "navbar-brand"  do %>
+        <%= image_tag("hotelsify.png", :size => "100x30") %>
+      <% end %>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <% if current_user.picture %>
+            <li>
+              <div class="navbar-picture">
+                <%= image_tag current_user.picture, class: "img-circle" %>
+              </div>
+            </li>
+          <% end %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Whislist</a></li>
+              <li><a href="#">My hotel style</a></li>
+              <li><a href="#">Match friends</a></li>
+              <li><a href="#">My Likes</a></li>
+              <li><%= link_to "My profile", profile_show_styles_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Deals <span class="badge">4</span> <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Deal 1</a></li>
+              <li><a href="#">Deal 2</a></li>
+              <li><a href="#">Deal 3</a></li>
+              <li><a href="#">Deal 4</a></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+        <% end %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Help <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Visit the Help Center</a></li>
+            <li><a href="#">Getting Started Guide</a></li>
+            <li><a href="#">How do I Create an Account?</a></li>
+            <li><a href="#">How do I Create my Traveling Profile?</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See All FAQs</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

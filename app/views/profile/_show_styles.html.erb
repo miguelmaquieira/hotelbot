@@ -1,0 +1,10 @@
+<div class="styles-page-container">
+  <div class="panel-search-box">
+    <%= render('layouts/search_box.html.erb', action: "save") %>
+  </div>
+  <div class="hotel-styles-container">
+    <% @hotel_styles.each do |hotel_style| %>
+      <%= render('profile/hotel_styles_widget.html.erb', style: hotel_style) %>
+    <% end %>
+  </div>
+</div>

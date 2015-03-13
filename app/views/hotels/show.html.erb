@@ -1,0 +1,56 @@
+<div class="hotel_details_container no-padding">
+  <div class="header">
+    <div class="container-fluid no-padding">
+      <%= image_tag  @hotel.hotel_pics[0].image_url %>
+    </div>
+  </div>
+  <div class="hotel_details container">
+    <div class="container-fluid">
+      <div class="col-sm-8">
+        <div class="details">
+          <div class="details-header">
+            <div class='row'>
+              <div class="col-sm-3 avatar">
+                <%= image_tag 'no-avatar.png' %>
+              </div>
+              <div class="col-sm-9">
+                <h3><%= @hotel.heading %></h3>
+                <p><%= @hotel.city %>, <%= @hotel.country %></p>
+                <div class="row amenities">
+                  <div class="col-sm-2">
+                    <div style="font-size: 36px;">
+                      <i class="fa fa-home"></i>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div style="font-size: 36px;">
+                      <i class="fa fa-users"></i>
+                    </div>
+                    <p>asdsad</p>
+                  </div>
+                  <div class="col-sm-2">
+                    <div style="font-size: 36px;">
+                      <i class="fa fa-cube"></i>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div style="font-size: 36px;">
+                      <i class="fa fa-bed"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="cta_container">
+          <div class="details-cta-container">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

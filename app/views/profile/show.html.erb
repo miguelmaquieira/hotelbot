@@ -1,0 +1,61 @@
+<div class="profile-page-container">
+  <div class="profile-header-container">
+    <ul class="nav nav-pills" role="tablist">
+      <% if action_name == 'show_styles' %>
+        <li role="presentation" class="active">
+      <% else %>
+        <li role="presentation">
+      <% end %>
+          <%= link_to profile_show_styles_path do %>
+            <i class="fa fa-user"></i>  Styles
+          <% end %>
+        </li>
+      <% if action_name == 'show_whishlists' %>
+        <li role="presentation" class="active">
+      <% else %>
+        <li role="presentation">
+      <% end %>
+          <%= link_to profile_show_whishlists_path do %>
+            <i class="fa fa-heart"></i>  Whishlists
+          <% end %>
+        </li>
+      <% if action_name == 'show_deals' %>
+        <li role="presentation" class="active">
+      <% else %>
+        <li role="presentation">
+      <% end %>
+          <%= link_to profile_show_deals_path do %>
+          <i class="fa fa-tags"></i>  Deals
+        <% end %>
+      </li>
+      <% if action_name == 'show_groups' %>
+        <li role="presentation" class="active">
+      <% else %>
+        <li role="presentation">
+      <% end %>
+          <%= link_to profile_show_groups_path do %>
+            <i class="fa fa-users"></i>  Groups
+          <% end %>
+        </li>
+       <% if action_name == 'show_settings' %>
+        <li role="presentation" class="active">
+      <% else %>
+        <li role="presentation">
+      <% end %>
+          <%= link_to profile_show_settings_path do %>
+            <i class="fa fa-cog"></i>  Profile
+          <% end %>
+        </li>
+    </ul>
+  </div>
+  <div class="profile-detail-container">
+    <div class="container-fluid">
+        <div class="col-sm-3">
+           <%= render("user_basic_profile", action: action_name) %>
+        </div>
+        <div class="col-sm-9">
+          <%= render action_name %>
+        </div>
+    </div>
+  </div>
+</div>

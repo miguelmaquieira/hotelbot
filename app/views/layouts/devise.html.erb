@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hotelsify.me</title>
+  <%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false" %>
+  <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+
+  <%= favicon_link_tag 'favicon.png' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= controller_assets %>
+  <%= views_assets %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render('layouts/header_nav_bar.html.erb') %>
+<div>
+  <% if @registration %>
+    <%= render('layouts/registration_wizard.html.erb') %>
+  <% else %>
+    <div class="sign-container">
+      <%= yield %>
+    </div>
+  <% end %>
+</div>
+
+<%= yield(:after_js) %>
+
+</body>
+</html>

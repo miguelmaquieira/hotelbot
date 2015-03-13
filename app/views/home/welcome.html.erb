@@ -1,0 +1,99 @@
+  <div class="welcome-container">
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Header search box -->
+        <div class="welcome-header">
+          <div class="welcome-image">
+            <%= image_tag("welcome_img_" + rand(4..4).to_s + ".jpg") %>
+          </div>
+          <div class="panel-search-box">
+            <%= render('layouts/search_box.html.erb') %>
+          </div>
+        </div>
+
+        <div class="welcome-browser-container">
+
+          <!-- Browser by hotel styles -->
+          <div class="container welcome-predefined-styles">
+            <div class='row'>
+              <div class="col-sm-12">
+                <div class="title">
+                  <p>Find Hotels Matching Your Style Preferences</p>
+                 </div>
+                 <div class="subtitle">
+                  <p>Get inspired and create your preferred hotel styles</p>
+                 </div>
+              </div>
+            </div>
+
+            <div class='row'>
+              <% @style_predefined.each do |style| %>
+                <div class="col-sm-4 image-box">
+                  <%= image_tag style[:img], class: "img-responsive" %>
+                  <div class="user-name">
+                    <p><%= style[:name] %></p>
+                  </div>
+                  <div class="tag-name">
+                    <% tags = style[:tags].split(/;/) %>
+                    <% tags.each do |tag| %>
+                      <span class="tags">
+                      <span class="post-tag"><a href="javascript:void()"><%= tag %></a></span>
+                      </span>
+                    <% end %>
+                  </div>
+                  <%= image_tag style[:img_user], class: "img-responsive", class: "user-pic" %>
+                  <a href="/hotels?predefined=<%= style[:predefined] %>" class="icon-actions">
+                    <div class="actions">
+                      <i class="fa fa-search fa-2x"></i>
+                      </div>
+                  </a>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+          <!-- Browser by cities -->
+          <div class="container welcome-predefined-cities">
+            <div class='row'>
+              <div class="col-sm-12">
+                <div class="title">
+                  <p>Discover Europe differently</p>
+                 </div>
+                 <div class="subtitle">
+                  <p> Look at top style searches from our travellers</p>
+                 </div>
+              </div>
+            </div>
+
+            <div class='row'>
+            <% @location_predefined.each do |location| %>
+              <div class="col-sm-4 image-box">
+                <%= image_tag location[:img], class: "img-responsive" %>
+                <div class="city-name">
+                  <p><%= location[:name] %></p>
+                </div>
+                <div class="tag-name">
+                  <% tags = location[:tags].split(/;/) %>
+                  <% tags.each do |tag| %>
+                    <span class="tags">
+                      <span class="post-tag"><a href="javascript:void()"><%= tag %></a></span>
+                    </span>
+                  <% end %>
+                </div>
+                <a href="/hotels?predefined=<%= location[:predefined] %>" class="icon-actions">
+                  <div class="actions">
+                    <i class="fa fa-search fa-2x"></i>
+                  </div>
+                </a>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

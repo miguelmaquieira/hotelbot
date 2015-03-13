@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ */
+
+ /*@import 'bootstrap-variable';*/
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'bootstrap-datetimepicker';
+@import 'bootstrap-select';
+@import 'select2';
+@import 'select2-bootstrap';
+@import 'font-awesome';
+@import 'bootstrap-social';
+@import 'bootstrap-multiselect';
+@import 'daterangepicker-bs3';
+@import 'bootstrap-tagsinput.scss';
+@import 'fuelux';
+@import 'search_box';
+@import 'registration_wizard';
+@import 'bootstrap3-switch';
+@import 'devise';
+@import 'common';
+@import 'profile';
+
+body {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+ .hotelsify-nav-header {
+    background-color: #FAFAFA;
+    .navbar-brand {
+      padding: 10px;
+    }
+    .navbar-picture {
+      padding-top: 10px;
+      img {
+        height: 32px;
+      }
+    }
+}
+
+#footer {
+  background-color: #292421;
+  color: #FFFFFF;
+  a:link {
+    color: #FA6900;
+  }
+  a:visited {
+    color: #FA6900;
+  }
+  a:hover {
+    color: #FFFFFF;
+  }
+}

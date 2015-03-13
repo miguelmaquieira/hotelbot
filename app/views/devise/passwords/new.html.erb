@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4 sign-container">
+      <div class="panel panel-info">
+        <div class="panel-heading"><strong>Forgot your password</strong></div>
+        <div class="panel-body">
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <div class="form-group">
+                <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' } %>
+              </div>
+            </div>
+            <div class="form-actions">
+              <div class="btn-group pull-right" role="group">
+                <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-default btn-sign-process" %>
+                <%= f.button :submit, "Reset password", class: "btn btn-primary btn-sign-process" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
